@@ -22,6 +22,6 @@ subprojects {
 	repositories {
     	mavenCentral()
 	}
-}
 
-build.dependsOn mavenBom
+	build.dependsOn mavenBom
+}
