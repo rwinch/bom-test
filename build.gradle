@@ -11,12 +11,13 @@ buildscript {
 		mavenCentral()
 	}
 }
-allprojects {
+	
+group = 'test.bom'
+	
+subprojects {
 	apply plugin: 'java'
 	apply plugin: 'maven'
 	apply plugin: 'maven-bom'
-	
-	group = 'test.bom'
 	
 	repositories {
     	mavenCentral()
