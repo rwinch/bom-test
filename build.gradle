@@ -23,3 +23,5 @@ subprojects {
     	mavenCentral()
 	}
 }
+
+build.dependsOn mavenBom
