@@ -21,6 +21,9 @@ public class MavenBomTask extends DefaultTask {
 	@TaskAction
 	public void configureBom() {
 		project.archivesBaseName = artifactId
+		
+		project.configurations.archives.artifacts.clear()
+		
 		bomFile.parentFile.mkdirs()
 		bomFile.write("Maven Build of Materials (BOM)")
 		project.artifacts {
