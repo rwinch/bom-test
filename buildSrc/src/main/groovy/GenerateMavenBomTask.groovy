@@ -18,6 +18,8 @@ public class GenerateMavenBomTask extends DefaultTask {
 
 	@TaskAction
 	public void configureBom() {
+		project.configurations.archives.artifacts.clear()
+		
 		project.install {
 			repositories.mavenInstaller {
 				pom.whenConfigured {
@@ -39,6 +41,11 @@ public class GenerateMavenBomTask extends DefaultTask {
 					}
 				}
 			}
+		}
+		
+		project.artifacts {
+			// work around GRADLE-2406 by attaching text artifact
+			archives(project.file("readme.txt"))
 		}
 	}
 }
