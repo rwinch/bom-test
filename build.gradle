@@ -14,8 +14,10 @@ buildscript {
 
 apply plugin: 'maven'
 apply plugin: 'maven-bom'
-	
-group = 'test.bom'
+
+allprojects {	
+	group = 'test.bom'
+}
 	
 subprojects {
 	apply plugin: 'java'
